@@ -8,8 +8,8 @@ Assurez-vous d'avoir Node.js et npm installés sur votre machine.
 
 ## **Installation**
 
-1. Clonez le projet à partir du dépôt GitHub : **`git clone https://github.com/votre_utilisateur/votre_projet.git`**
-2. Installez les dépendances du projet : **`npm install`**
+1. Clonez le projet à partir du dépôt GitHub : **`git clone git@github.com:AhmedAbdNext/testRecu.git`**
+1. Installez les dépendances du projet : **`npm install`**
 
 ## **Utilisation**
 
