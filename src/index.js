@@ -1,7 +1,5 @@
 import users from "../datas.json";
-// Constants
-const paramKeys = ["firstName", "lastName", "age", "email", "phone", "eyeColor"];
-const eyeColors = ["blue", "brown", "green"];
+import usersFilter from "./utils/filters";
 
 // Get the search parameters from the current URL
 const searchParams = new URLSearchParams(window.location.search);
@@ -15,11 +13,7 @@ const queryKeys = Array.from(keysIterator);
 const queryValues = Array.from(valuesIterator);
 
 const tbody = document.getElementsByTagName("tbody")[0];
-// The function calculates the closest multiples of 5 to 'num' and return 5 years ranges
-function findNearestMultipleOfFive(num) {
-  const multiple = Math.round(num / 5) * 5;
-  return multiple - num < 0 ? [multiple, multiple + 5] : [multiple - 5, multiple];
-}
+
 // Create a table cell
 const createTableCell = (item) => {
   const cell = document.createElement("td");
@@ -44,33 +38,7 @@ const createTableRow = (currentUser) => {
   tbody.appendChild(row);
 };
 
-// Filter users by the url qury params
-const filterByQuery = (currentUser) => {
-  let isVerified = true;
-  queryKeys.forEach((key, index) => {
-    if (key === "eyeColor" && !eyeColors.includes(queryValues[index])) {
-      return;
-    }
-    if (key === "age") {
-      const [min, max] = findNearestMultipleOfFive(queryValues[index]);
-      isVerified = (currentUser[key]) >= min && (currentUser[key]) <= max;
-    } else
-    if (paramKeys.includes(key) && currentUser[key].toString() !== queryValues[index]) {
-      isVerified = false;
-    }
-  });
-  return isVerified;
-};
-
-// Set users by request parameters
-const usersFilter = () => {
-  if (queryKeys.length > 0) {
-    return users.filter(filterByQuery);
-  }
-  return users;
-};
-
 // Main render
-usersFilter().forEach((currentUser) => {
+usersFilter(users, queryKeys, queryValues).forEach((currentUser) => {
   createTableRow(currentUser);
 });

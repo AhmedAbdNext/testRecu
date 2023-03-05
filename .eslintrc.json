@@ -8,6 +8,9 @@
     "parserOptions": {
         "ecmaVersion": "latest"
     },
+    "plugins": [
+        "jest"
+    ],
     "rules": {
         "no-console": "off",
         "quotes": [
