@@ -1,8 +1,77 @@
+# **Projet**
+
+Ce projet utilise Webpack pour compiler et bundle les fichiers JavaScript, CSS et autres ressources nécessaires à l'application.
+
 ## **Prérequis**
 
 Assurez-vous d'avoir Node.js et npm installés sur votre machine.
 
-## **Étapes**
+## **Installation**
+
+1. Clonez le projet à partir du dépôt GitHub : **`git clone https://github.com/votre_utilisateur/votre_projet.git`**
+2. Installez les dépendances du projet : **`npm install`**
+
+## **Utilisation**
+
+1. Pour lancer l'application en mode développement : **`npm run start`**
+2. Pour lancer l'application en mode production : **`npm run build`**
+3. Pour exécuter les tests : **`npm run test`**
+4. Pour lance eslint: **`npm run lint`**
+
+## **Structure du projet**
+
+- **`src/`** : Répertoire contenant les fichiers sources de l'application
+    - **`index.js`** : Fichier d'entrée principal pour l'application
+- **`dist/`** : Répertoire contenant les fichiers générés par Webpack pour l'application en mode production
+- **`test/`** : Répertoire contenant les fichiers de test pour l'application
+
+## **Configuration**
+
+La configuration de Webpack est définie dans le fichier **`webpack.config.js`**. Ce fichier contient les règles de compilation pour les fichiers JavaScript, CSS, les plugins utilisés et les options de sortie pour les fichiers générés.
+
+## **Dépendances**
+
+- Webpack : **`^5.75.0`**
+- Babel : **`^7.21.0`**
+- Jest : **`^29.4.3`**
+
+
+## **Docker**
+Pour créer l'image Docker, accédez au répertoire contenant le Dockerfile et exécutez la commande suivante :
+
+```
+
+docker build -t my-nginx-image .
+
+```
+
+Cela créera une image Docker avec une tag "my-nginx-image" basée sur le Dockerfile dans le répertoire actuel.
+
+Vous pouvez ensuite exécuter l'image en tant que conteneur à l'aide de la commande suivante :
+
+```
+
+docker run -p 8080:80 my-nginx-image
+
+```
+
+Cela démarrera un conteneur exécutant Nginx avec votre projet Webpack sur le port 8080 sur votre ordinateur local.
+
+## **Eslint**
+
+Ce projet posséde un outil d'analyse statique populaire 
+(`Eslint `) qui aide les développeurs à identifier et à résoudre les problèmes dans leur code JavaScript.
+
+Pour exécuter ESLint sur votre code, vous pouvez utiliser la commande :
+
+```
+
+npm run lint
+
+```
+
+
+## **Les étapes de mise en place de webpack et babel**
 
 1. Initialisez votre projet avec **`npm init`**.
 2. Installez les packages nécessaires :
@@ -64,4 +133,3 @@ Assurez-vous d'avoir Node.js et npm installés sur votre machine.
     
 7. Votre code compilé sera dans le dossier **`dist`** sous le nom de fichier **`bundle.js`**.
 
-Félicitations, vous avez maintenant configuré Babel et Webpack pour votre projet de site web natif !
