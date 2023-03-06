@@ -17,13 +17,14 @@ Assurez-vous d'avoir Node.js et npm installés sur votre machine.
 2. Pour lancer l'application en mode production : **`npm run build`**
 3. Pour exécuter les tests : **`npm run test`**
 4. Pour lance eslint: **`npm run lint`**
-## ** Param Query**
+## **Param Query**
 
 les paramètres query sont les suivants
 
 ```
 lastName, firstName, age, eyeColor, email, phone
 ```
+![](Screenshot.png)
 
 ## **Structure du projet**
 
